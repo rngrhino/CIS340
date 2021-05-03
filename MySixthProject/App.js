@@ -1,12 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 
 export default function App() {
+
+const csuLogo = {
+  uri: "https://i.pinimg.com/originals/f1/53/5f/f1535f79f6e5868f6284048755f86139.gif",
+};
+
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+     <ImageBackground source={csuLogo}
+     style={styles.image}>
+
+<Text style={styles.text}>CSU logo</Text>
+    
+    
+     </ImageBackground>
+
+     
+
     </View>
   );
 }
@@ -14,8 +28,24 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+flexDirection: "column",
   },
+
+image:{
+  flex: 1,
+ resizeMode: "cover",
+ justifyContent: "center"
+
+},
+
+
+text:{
+  color: "red",
+  fontSize: 40,
+  fontWeight: 'bold'
+},
+
+
+
+
 });
