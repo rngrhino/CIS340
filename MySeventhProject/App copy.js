@@ -1,23 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-export default class TouchableButton extends Component {
-
-
-    onPressButton(){
-      alert("You tapped a button")
-    }
-
-
-  render(){
+export default function App() {
   return (
     <View style={styles.container}>
       
       <View style={styles.containerButton}>
 
       <Button
-        onPress={this.onPressButton}
+        onPress={() => {
+            alert("You tapped button 1");
+          }}
           title="Press Button 1"
         ></Button>
 
@@ -27,13 +21,17 @@ export default class TouchableButton extends Component {
         <View style={styles.containerLayoutButton}>
 
         <Button
-       onPress={this.onPressButton}
+        onPress={() => {
+            alert("You tapped button 2");
+          }}
           title="Press Button 2"
           color='green'
         ></Button>
 
         <Button
-         onPress={this.onPressButton}
+        onPress={() => {
+            alert("You tapped button 3");
+          }}
           title="Press Button 3"
           color='red'
         ></Button>
@@ -41,7 +39,9 @@ export default class TouchableButton extends Component {
 
        <View style={styles.containerButton}>
        <Button
-    onPress={this.onPressButton}
+        onPress={() => {
+            alert("You tapped button 4");
+          }}
           title="Press Button 4"
           color='black'
         ></Button>
@@ -54,7 +54,6 @@ export default class TouchableButton extends Component {
 
     </View>
   );
-}
 }
 
 const styles = StyleSheet.create({
