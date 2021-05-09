@@ -1,8 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';//import image picker
-import * as Sharing from 'expo-sharing'; //import image share
+import * as ImagePicker from 'expo-image-picker'//import
 
 export default function App() {
 
@@ -28,19 +27,6 @@ export default function App() {
 
   };
 
-
-  //add sharing image dialog
-  let openSharingDialogAsync = async () => {
-    if ( !(await Sharing.isAvailableAsync())){
-      alert('Sharing is not available on my phone');
-      return;
-    }
-
-    Sharing.shareAsync(selectedImage.localUri);
-
-  };
-
-
   //display the selected image
 if (selectedImage !== null){
   return(
@@ -48,13 +34,6 @@ if (selectedImage !== null){
       <Image source={{uri: selectedImage.localUri}} style={styles.selImage}>
 
       </Image>
-
-      <TouchableOpacity onPress={openSharingDialogAsync} style={styles.button}>
-        <Text style={styles.buttonText}>Share This Photo</Text>
-
-      </TouchableOpacity>
-
-
     </View>
   )
 }
@@ -102,7 +81,7 @@ const styles = StyleSheet.create({
 
   button: {
     alignItems: 'center',
-    backgroundColor: '#F08F00',
+    backgroundColor: '#F08F99',
     padding: 20,
     borderRadius: 5
   },

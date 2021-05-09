@@ -1,13 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';//import image picker
-import * as Sharing from 'expo-sharing'; //import image share
+import * as ImagePicker from 'expo-image-picker'//import
 
 export default function App() {
-
-    const [selectedImage, setSelectedImage] = React.useState(null)
-
 
   let openImagePickerAsync = async () => {
 
@@ -19,45 +15,9 @@ export default function App() {
     }
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync();
-   
-     if (pickerResult.cancelled === true){
-       return;
-     }
+    console.log(pickerResult);
 
-     setSelectedImage({localUri: pickerResult.uri});
-
-  };
-
-
-  //add sharing image dialog
-  let openSharingDialogAsync = async () => {
-    if ( !(await Sharing.isAvailableAsync())){
-      alert('Sharing is not available on my phone');
-      return;
-    }
-
-    Sharing.shareAsync(selectedImage.localUri);
-
-  };
-
-
-  //display the selected image
-if (selectedImage !== null){
-  return(
-    <View style={styles.container}>
-      <Image source={{uri: selectedImage.localUri}} style={styles.selImage}>
-
-      </Image>
-
-      <TouchableOpacity onPress={openSharingDialogAsync} style={styles.button}>
-        <Text style={styles.buttonText}>Share This Photo</Text>
-
-      </TouchableOpacity>
-
-
-    </View>
-  )
-}
+  }
 
 //end of new code
 
@@ -102,7 +62,7 @@ const styles = StyleSheet.create({
 
   button: {
     alignItems: 'center',
-    backgroundColor: '#F08F00',
+    backgroundColor: '#F08F99',
     padding: 20,
     borderRadius: 5
   },
@@ -129,12 +89,6 @@ fontSize: 20,
 color: "#fff"
 
 
-  },
-
-  selImage: {
-    width: 300,
-    height: 300,
-    resizeMode: 'contain'
   }
 
 
