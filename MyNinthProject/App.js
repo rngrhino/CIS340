@@ -32,7 +32,9 @@ class WeatherForecast extends Component {
         <Forecast 
         main={this.state.forecast.main}
         description={this.state.forecast.description}
+        id = {this.state.forecast.id}
         temp = {this.state.forecast.temp}
+       
         >
         </Forecast>
       )

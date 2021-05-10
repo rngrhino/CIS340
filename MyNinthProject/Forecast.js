@@ -15,6 +15,9 @@ class Forecast extends Component {
         <Text style={styles.bigText}>
           {this.props.temp}°F
         </Text>
+        <Text style={styles.bigText}>
+          {this.props.name}
+        </Text>
       </View>
     );
   }
